@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+</head>
+<body>
+    <dir>
+        <label for="id_name">Name:</label>
+        <input type="text" required id="id_name">
+    </dir>
+
+    <dir>
+        <label for="{{form.name.id_for_label}}">Name:</label>
+        {{form.name}}
+        <label for="{{form.email.id_for_label}}">Email:</label>
+        {{form.email}}
+    </dir>
+    <dir>
+        {{form.name.label_tag}}
+        {{form.name}}
+        {{form.first_name.label_tag}}
+        {{form.first_name}}
+    </dir>
+    <dir>
+        {{form.name.label}} <br>
+        {{form.name.value}} <br>
+        {{form.name.html_name}} <br>
+        {{form.email.html_name}} <br>
+        {{form.name.help_text}}
+    </dir>
+    <dir>
+        {{form.name.field.required}} <br>
+    </dir>
+
+    
+</body>
+</html>

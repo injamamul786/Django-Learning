@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello {{name}}</h1>
+    {% if messages %}
+    {% for message in messages %}
+    <small {% if message.tags %} class="{{message.tags}}" {% endif %}>{{message}}</small>
+    {% endfor %}
+{% endif %}
+<form action="" method="post">
+    {% csrf_token %}
+    {% for fm in form %}
+        {{fm.label_tag}} {{fm}} {{fm.errors|striptags}} <br> <br>
+        {% endfor %}
+        {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+            <p class="error">{{error}}</p>
+            {% endfor %}
+        {% endif %}
+    <input type="submit" value="Save">
+</form>
+<a href="{% url "ChangePass" %}">Change Password</a> <br>
+<a href="{% url "ChangePass1" %}">Forget Password</a> <br>
+<a href="{% url 'logout' %}">LogOut</a>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashborad</title>
+</head>
+<body>
+    <h1>Dashborad</h1>
+    <h3>Welcome {{user}}</h3>
+    {% if perms.enroll.add_blog %}
+    <input type="button" value="Add"> <br> <br>
+    {% endif %}
+    {% if perms.enroll.change_blog %}
+    <input type="button" value="Change"> <br> <br>
+    {% endif %}
+    {% if perms.enroll.view_blog %}
+    <input type="button" value="View"> <br> <br>
+    {% endif %}
+    {% if perms.enroll.delete_blog %}
+    <input type="button" value="Delete"> <br> <br>
+    {% endif %}
+<a href="{% url 'logout' %}">LogOut</a>
+
+</body>
+</html>

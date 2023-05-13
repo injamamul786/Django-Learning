@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+        <th>ID</th>
+        <th>Roll</th>
+        <th>Name</th>
+        <th>Marks</th>
+        <th>City</th>
+        <th>Pass Date</th>
+        <th>Addmition Date</th>
+        </tr>
+    {% for data in student %}
+        <tr>
+       <td>{{data.id}}</td>
+       <td> {{data.roll}}</td>
+        <td>{{data.name}}</td>
+        <td>{{data.marks}}</td>
+        <td>{{data.city}}</td>
+        <td>{{data.passdate}}</td>
+        <td>{{data.admdatetime}}</td>
+        </tr>
+    {% endfor %}
+</table>
+    {{sql_query}}
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+        <th>ID</th>
+        <th>Roll</th>
+        <th>Name</th>
+        <th>Marks</th>
+        <th>City</th>
+        <th>Pass Date</th>
+        <th>Addmition Date</th>
+        </tr>
+    {% for data in student %}
+        <tr>
+       <td>{{data.id}}</td>
+       <td> {{data.roll}}</td>
+        <td>{{data.name}}</td>
+        <td>{{data.marks}}</td>
+        <td>{{data.city}}</td>
+        <td>{{data.passdate}}</td>
+        <td>{{data.admdatetime}}</td>
+        </tr>
+    {% endfor %}
+</table>
+    <h3>Average dict{{average}}</h3>
+    <h3>Average {{average.marks__avg}}</h3>
+    <h3>Sum of marks {{Sum.marks__sum}}</h3>
+    <h3>Min of marks {{Min.marks__min}}</h3>
+    <h1>Max of marks {{Max.marks__max}}</h1> 
+    <h3>Count no of rows {{Count.marks__count}}</h3>
+    {{sql_query}}
+</body>
+</html>

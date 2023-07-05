@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Django</title>
+</head>
+<body>
+    <style>
+        body{
+            background-color: aqua;
+            border: 100ex;
+        }
+    h1{
+        margin-left: 5ex;
+        margin-top: 5ex;
+        color: blue;
+    }
+    </style>
+    <h1>Hello {{course|slice:"len"}}</h1>
+    {% comment %} <ul>
+        {%for i in list%}
+        <li>{{i}}</li>
+        {% endfor %}
+    </ul> {% endcomment %}
+    {% comment %} {{appname}} {% endcomment %}
+    {% comment %} {% for key, value in appname.items %}
+        {{key}}={{value}} <br>
+        {% endfor %} {% endcomment %}
+
+    {% for k, v in appname.items %}
+    {{ k }} = {{ v }} <br>
+    {% endfor %}
+    <h2>How r u</h2>
+    <a href="https://www.instagram.com/">{{website|upper}}</a>
+    <p>This is my first django project using templates</p>
+    path of visiting this page is /app1/instagram/
+</body>
+</html> 

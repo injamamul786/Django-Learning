@@ -1,0 +1,27 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+<div class="col-sm-10">
+    <h3 class="text-white my-5">Login Page</h3>
+    <div class="col-md-10">
+        <div class="h-100 p-5 bg-dark border rounded-3 jumbo-color">
+          <form action="" method="post" novalidate>
+            {% csrf_token %}
+            {% for fm in form %}
+            <div class="form-group">
+            {{fm.label_tag}} {{fm}} <small class="text-warning">{{fm.errors|striptags}}</small> <br> <br>
+            </div>
+            {% endfor %}
+            <button class="btn btn-primary" type="submit">Login</button>
+            {% if form.non_field_errors %}
+                {% for error in form.non_field_errors %}
+                <p class="alert alert-denger my-3">{{error}}</p>
+                {% endfor %}
+            {% endif %}
+        </form>
+        <br>
+        <a href="{% url 'signup' %}" class="btn btn-warning">Signup</a>
+        </div>
+      </div>
+</div>
+{% endblock content %}
